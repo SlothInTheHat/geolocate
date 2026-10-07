@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ec2b0372e00c4e192d797f8e47f63196 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_ec2b0372e00c4e192d797f8e47f63196" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ec2b0372e00c4e192d797f8e47f63196 = L.map(
+                "map_ec2b0372e00c4e192d797f8e47f63196",
+                {
+                    center: [39.96179275512695, -83.00172271728516],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 6,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_267f3c44dfed111939cba0074ac17799 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_267f3c44dfed111939cba0074ac17799.addTo(map_ec2b0372e00c4e192d797f8e47f63196);
+        
+    
+            var marker_cluster_95cbac3f9dff4d128001b5b057c074a3 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_188fd79e283aec8dafcff758a885c6bf = L.marker(
+                [39.96135711669922, -83.00005340576172],
+                {
+}
+            ).addTo(marker_cluster_95cbac3f9dff4d128001b5b057c074a3);
+        
+    
+            var icon_a12defb7cb184f6bb3df2816b3b8fd73 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_171034d8e766ff528b35abbeac6bc91a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_870183eb80dbf055722c165c86086ab0 = $(`<div id="html_870183eb80dbf055722c165c86086ab0" style="width: 100.0%; height: 100.0%;"><b>bankier_032071323.webp (#2, geoclip, score=0.0208)</b><br>39.96136, -83.00005<br>Source: geoclip<br>GeoCLIP uncertainty: ~1.2km spread across 2 region(s)<br><a href="https://www.mapillary.com/app/?lat=39.96135711669922&lng=-83.00005340576172&z=17" target="_blank">Open nearest street-level imagery (Mapillary)</a></div>`)[0];
+                popup_171034d8e766ff528b35abbeac6bc91a.setContent(html_870183eb80dbf055722c165c86086ab0);
+            
+        
+
+        marker_188fd79e283aec8dafcff758a885c6bf.bindPopup(popup_171034d8e766ff528b35abbeac6bc91a)
+        ;
+
+        
+    
+    
+            marker_188fd79e283aec8dafcff758a885c6bf.bindTooltip(
+                `<div>
+                     bankier_032071323.webp (#2, geoclip, score=0.0208)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_188fd79e283aec8dafcff758a885c6bf.setIcon(icon_a12defb7cb184f6bb3df2816b3b8fd73);
+            
+    
+            var marker_6e49f20196d183557c688e8ea5d3f117 = L.marker(
+                [39.96195983886719, -83.00298309326172],
+                {
+}
+            ).addTo(marker_cluster_95cbac3f9dff4d128001b5b057c074a3);
+        
+    
+            var icon_42015f1e934507446613bf77e7311e47 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dc2070bd97e61f4ed8cd5d6fd79eb37c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ce9f336d748efebd7803ed66c6ee761c = $(`<div id="html_ce9f336d748efebd7803ed66c6ee761c" style="width: 100.0%; height: 100.0%;"><b>bankier_032071323.webp (#3, geoclip, score=0.0206)</b><br>39.96196, -83.00298<br>Source: geoclip<br>GeoCLIP uncertainty: ~1.2km spread across 2 region(s)<br><a href="https://www.mapillary.com/app/?lat=39.96195983886719&lng=-83.00298309326172&z=17" target="_blank">Open nearest street-level imagery (Mapillary)</a></div>`)[0];
+                popup_dc2070bd97e61f4ed8cd5d6fd79eb37c.setContent(html_ce9f336d748efebd7803ed66c6ee761c);
+            
+        
+
+        marker_6e49f20196d183557c688e8ea5d3f117.bindPopup(popup_dc2070bd97e61f4ed8cd5d6fd79eb37c)
+        ;
+
+        
+    
+    
+            marker_6e49f20196d183557c688e8ea5d3f117.bindTooltip(
+                `<div>
+                     bankier_032071323.webp (#3, geoclip, score=0.0206)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6e49f20196d183557c688e8ea5d3f117.setIcon(icon_42015f1e934507446613bf77e7311e47);
+            
+    
+            var marker_f06094cff3bcd2567dd921649603bd2e = L.marker(
+                [39.960906982421875, -82.999267578125],
+                {
+}
+            ).addTo(marker_cluster_95cbac3f9dff4d128001b5b057c074a3);
+        
+    
+            var icon_f3cf171fd4e2ab36ad0ea34f59a3d529 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f4277fef7e162eec5287557409666f1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_784692d81dbfebf716ff9eb1a9688f14 = $(`<div id="html_784692d81dbfebf716ff9eb1a9688f14" style="width: 100.0%; height: 100.0%;"><b>bankier_032071323.webp (#4, geoclip, score=0.0194)</b><br>39.96091, -82.99927<br>Source: geoclip<br>GeoCLIP uncertainty: ~1.2km spread across 2 region(s)<br><a href="https://www.mapillary.com/app/?lat=39.960906982421875&lng=-82.999267578125&z=17" target="_blank">Open nearest street-level imagery (Mapillary)</a></div>`)[0];
+                popup_9f4277fef7e162eec5287557409666f1.setContent(html_784692d81dbfebf716ff9eb1a9688f14);
+            
+        
+
+        marker_f06094cff3bcd2567dd921649603bd2e.bindPopup(popup_9f4277fef7e162eec5287557409666f1)
+        ;
+
+        
+    
+    
+            marker_f06094cff3bcd2567dd921649603bd2e.bindTooltip(
+                `<div>
+                     bankier_032071323.webp (#4, geoclip, score=0.0194)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f06094cff3bcd2567dd921649603bd2e.setIcon(icon_f3cf171fd4e2ab36ad0ea34f59a3d529);
+            
+    
+            var marker_9b479382b65c20378d18cf0ee2a88f13 = L.marker(
+                [39.962738037109375, -83.00464630126953],
+                {
+}
+            ).addTo(marker_cluster_95cbac3f9dff4d128001b5b057c074a3);
+        
+    
+            var icon_ebe03d63c87254e4126ff36a8a0d363c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8e288de1505b1211b45d89602b26e56a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f86572d906fafc9c6e7e0644368a8db1 = $(`<div id="html_f86572d906fafc9c6e7e0644368a8db1" style="width: 100.0%; height: 100.0%;"><b>bankier_032071323.webp (#5, geoclip, score=0.0193)</b><br>39.96274, -83.00465<br>Source: geoclip<br>GeoCLIP uncertainty: ~1.2km spread across 2 region(s)<br><a href="https://www.mapillary.com/app/?lat=39.962738037109375&lng=-83.00464630126953&z=17" target="_blank">Open nearest street-level imagery (Mapillary)</a></div>`)[0];
+                popup_8e288de1505b1211b45d89602b26e56a.setContent(html_f86572d906fafc9c6e7e0644368a8db1);
+            
+        
+
+        marker_9b479382b65c20378d18cf0ee2a88f13.bindPopup(popup_8e288de1505b1211b45d89602b26e56a)
+        ;
+
+        
+    
+    
+            marker_9b479382b65c20378d18cf0ee2a88f13.bindTooltip(
+                `<div>
+                     bankier_032071323.webp (#5, geoclip, score=0.0193)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b479382b65c20378d18cf0ee2a88f13.setIcon(icon_ebe03d63c87254e4126ff36a8a0d363c);
+            
+    
+            marker_cluster_95cbac3f9dff4d128001b5b057c074a3.addTo(map_ec2b0372e00c4e192d797f8e47f63196);
+        
+    
+            var marker_7d1ceb9feccba90e7f482727925b0285 = L.marker(
+                [39.96200180053711, -83.00166320800781],
+                {
+}
+            ).addTo(map_ec2b0372e00c4e192d797f8e47f63196);
+        
+    
+            var icon_e56057325daf758b5803f1deaab96649 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc3975393a128bc85b1264a09d7e9882 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73af08d8930b8a6953b4c0e954edbe85 = $(`<div id="html_73af08d8930b8a6953b4c0e954edbe85" style="width: 100.0%; height: 100.0%;"><b>bankier_032071323.webp (best, geoclip, score=0.0210)</b><br>39.96200, -83.00166<br>Source: geoclip<br>GeoCLIP uncertainty: ~1.2km spread across 2 region(s)<br><a href="https://www.mapillary.com/app/?lat=39.96200180053711&lng=-83.00166320800781&z=17" target="_blank">Open nearest street-level imagery (Mapillary)</a></div>`)[0];
+                popup_fc3975393a128bc85b1264a09d7e9882.setContent(html_73af08d8930b8a6953b4c0e954edbe85);
+            
+        
+
+        marker_7d1ceb9feccba90e7f482727925b0285.bindPopup(popup_fc3975393a128bc85b1264a09d7e9882)
+        ;
+
+        
+    
+    
+            marker_7d1ceb9feccba90e7f482727925b0285.bindTooltip(
+                `<div>
+                     bankier_032071323.webp (best, geoclip, score=0.0210)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7d1ceb9feccba90e7f482727925b0285.setIcon(icon_e56057325daf758b5803f1deaab96649);
+            
+    
+            var circle_d6e4583a87cf5d2cb8f699ec9369ba39 = L.circle(
+                [39.96200180053711, -83.00166320800781],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "orange", "fillOpacity": 0.08, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1218.6275192204303, "stroke": true, "weight": 1}
+            ).addTo(map_ec2b0372e00c4e192d797f8e47f63196);
+        
+    
+            circle_d6e4583a87cf5d2cb8f699ec9369ba39.bindTooltip(
+                `<div>
+                     GeoCLIP uncertainty radius: ~1.2km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
