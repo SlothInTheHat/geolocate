@@ -23,8 +23,10 @@ Usage:
     open_mapillary_at(40.7580, -73.9855)
 """
 
+import base64
 import functools
 import http.server
+import io
 import json
 import os
 import socketserver
@@ -33,6 +35,7 @@ import time
 import webbrowser
 import folium
 from folium.plugins import MarkerCluster
+from PIL import Image
 
 from geolocate import POINTS_OUTPUT_PATH
 
@@ -75,6 +78,29 @@ def _mapillary_url(lat: float, lon: float, zoom: int = 17) -> str:
     return f"https://www.mapillary.com/app/?lat={lat}&lng={lon}&z={zoom}"
 
 
+def _image_to_data_uri(image_path: str, max_width: int = 320) -> str | None:
+    """
+    Downscale an image and embed it as a base64 data: URI, so the popup can
+    show the actual source photo without the saved HTML depending on that
+    image file still being around at the same path later (it's self-contained
+    either served locally or opened as a standalone file).
+
+    Returns None if the image can't be read, so callers can fall back to a
+    text-only popup instead of breaking the whole map.
+    """
+    try:
+        with Image.open(image_path) as img:
+            img = img.convert("RGB")
+            img.thumbnail((max_width, max_width))
+            buffer = io.BytesIO()
+            img.save(buffer, format="JPEG", quality=80)
+    except Exception:
+        return None
+
+    encoded = base64.b64encode(buffer.getvalue()).decode("ascii")
+    return f"data:image/jpeg;base64,{encoded}"
+
+
 def _marker_color(p: dict) -> str:
     """
     Color-code a marker by how much it should be trusted:
@@ -101,8 +127,10 @@ def create_map(points: list[dict], output_path: str = "disaster_map.html", open_
 
     Args:
         points: list of dicts with "lat", "lon", and optional "label", "kind"
-            ("best"/"alt"), "source" ("exif"/"geoclip"), "spread_km", and
-            "num_clusters" (as produced by geolocate.py's analyze_image()).
+            ("best"/"alt"), "source" ("exif"/"geoclip"), "spread_km",
+            "num_clusters", and "image_path" (as produced by geolocate.py's
+            analyze_image()). When "image_path" is set and readable, the
+            source photo is embedded as a thumbnail in the marker's popup.
             Best/EXIF-sourced points are drawn as standalone markers so they
             stay visible when zoomed out; alternates are grouped into a
             cluster. A best point with spread_km > 0 gets a shaded circle
@@ -129,10 +157,15 @@ def create_map(points: list[dict], output_path: str = "disaster_map.html", open_
         mapillary_link = _mapillary_url(lat, lon)
         kind = p.get("kind", "best")
 
-        popup_lines = [
-            f"<b>{label}</b><br>",
-            f"{lat:.5f}, {lon:.5f}<br>",
-        ]
+        popup_lines = [f"<b>{label}</b><br>"]
+
+        image_path = p.get("image_path")
+        if image_path:
+            data_uri = _image_to_data_uri(image_path)
+            if data_uri:
+                popup_lines.append(f'<img src="{data_uri}" style="max-width:100%; display:block; margin-bottom:4px;"><br>')
+
+        popup_lines.append(f"{lat:.5f}, {lon:.5f}<br>")
         if p.get("source"):
             popup_lines.append(f"Source: {p['source']}<br>")
         if p.get("origin") == "ocr_brand":
@@ -153,7 +186,7 @@ def create_map(points: list[dict], output_path: str = "disaster_map.html", open_
 
         marker = folium.Marker(
             location=[lat, lon],
-            popup=folium.Popup(popup_html, max_width=300),
+            popup=folium.Popup(popup_html, max_width=340),
             tooltip=label,
             icon=folium.Icon(color=_marker_color(p)),
         )

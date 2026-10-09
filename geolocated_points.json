@@ -1,52 +1,57 @@
 [
   {
-    "lat": 39.96200180053711,
-    "lon": -83.00166320800781,
-    "label": "bankier_032071323.webp (best, geoclip, score=0.0210)",
+    "lat": 40.689178466796875,
+    "lon": -74.04457092285156,
+    "label": "images.jpg (best, geoclip, score=0.0568)",
     "kind": "best",
     "source": "geoclip",
     "origin": "geoclip",
-    "spread_km": 1.2186275192204303,
-    "num_clusters": 2
+    "spread_km": 1.2570675945333067,
+    "num_clusters": 1,
+    "image_path": "images.jpg"
   },
   {
-    "lat": 39.96135711669922,
-    "lon": -83.00005340576172,
-    "label": "bankier_032071323.webp (#2, geoclip, score=0.0208)",
+    "lat": 40.68924331665039,
+    "lon": -74.04454803466797,
+    "label": "images.jpg (#2, geoclip, score=0.0567)",
     "kind": "alt",
     "source": "geoclip",
     "origin": "geoclip",
-    "spread_km": 1.2186275192204303,
-    "num_clusters": 2
+    "spread_km": 1.2570675945333067,
+    "num_clusters": 1,
+    "image_path": "images.jpg"
   },
   {
-    "lat": 39.96195983886719,
-    "lon": -83.00298309326172,
-    "label": "bankier_032071323.webp (#3, geoclip, score=0.0206)",
+    "lat": 40.689247131347656,
+    "lon": -74.04461669921875,
+    "label": "images.jpg (#3, geoclip, score=0.0567)",
     "kind": "alt",
     "source": "geoclip",
     "origin": "geoclip",
-    "spread_km": 1.2186275192204303,
-    "num_clusters": 2
+    "spread_km": 1.2570675945333067,
+    "num_clusters": 1,
+    "image_path": "images.jpg"
   },
   {
-    "lat": 39.960906982421875,
-    "lon": -82.999267578125,
-    "label": "bankier_032071323.webp (#4, geoclip, score=0.0194)",
+    "lat": 40.689292907714844,
+    "lon": -74.04454803466797,
+    "label": "images.jpg (#4, geoclip, score=0.0567)",
     "kind": "alt",
     "source": "geoclip",
     "origin": "geoclip",
-    "spread_km": 1.2186275192204303,
-    "num_clusters": 2
+    "spread_km": 1.2570675945333067,
+    "num_clusters": 1,
+    "image_path": "images.jpg"
   },
   {
-    "lat": 39.962738037109375,
-    "lon": -83.00464630126953,
-    "label": "bankier_032071323.webp (#5, geoclip, score=0.0193)",
+    "lat": 40.689300537109375,
+    "lon": -74.04451751708984,
+    "label": "images.jpg (#5, geoclip, score=0.0566)",
     "kind": "alt",
     "source": "geoclip",
     "origin": "geoclip",
-    "spread_km": 1.2186275192204303,
-    "num_clusters": 2
+    "spread_km": 1.2570675945333067,
+    "num_clusters": 1,
+    "image_path": "images.jpg"
   }
 ]

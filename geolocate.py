@@ -327,6 +327,7 @@ def main():
                 "origin": origin,
                 "spread_km": result["spread_km"],
                 "num_clusters": result["num_clusters"],
+                "image_path": image_path,
             }
             if origin == "ocr_brand":
                 point["matched_text"] = cand["matched_text"]
